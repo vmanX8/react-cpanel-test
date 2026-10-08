@@ -3,4 +3,6 @@ deployment:
   tasks:
     - export DEPLOYPATH=/home11/bakisgr/public_html/react-test/
     - /bin/mkdir -p $DEPLOYPATH
-    - node --version > $DEPLOYPATH/node-version.txt 2>&1
+    - /usr/bin/which node > $DEPLOYPATH/node-check.txt 2>&1 || true
+    - /usr/bin/which npm >> $DEPLOYPATH/node-check.txt 2>&1 || true
+    - /usr/bin/which php >> $DEPLOYPATH/node-check.txt 2>&1 || true
